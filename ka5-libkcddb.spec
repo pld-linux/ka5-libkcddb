@@ -1,18 +1,29 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		libkcddb
 Summary:	libkcddb
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	126d5c3ae7a86b6835e154fd5cc5f63f
+# Source0-md5:	c4ec0aacf331aa322df586c49c722e48
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Network-devel
+BuildRequires:	Qt5Test-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 2.8.12
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	gettext-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kcodecs-devel >= 5.24.0
+BuildRequires:	kf5-kconfig-devel >= 5.24.0
+BuildRequires:	kf5-kdoctools-devel >= 5.24.0
+BuildRequires:	kf5-ki18n-devel >= 5.24.0
+BuildRequires:	kf5-kio-devel >= 5.24.0
+BuildRequires:	kf5-kwidgetsaddons-devel >= 5.24.0
 BuildRequires:	libmusicbrainz5-devel >= 5.1.0
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -22,11 +33,11 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-libkccdb.
+KDE CDDB library.
 
 %package devel
 Summary:	Header files for %{kaname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
