@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkcddb
 Summary:	libkcddb
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	75b176863c1cc196dd343ff1b99f9b21
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	0d15dfee69210495ff1941dbf343ea5a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -79,8 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %ghost %{_libdir}/libKF5Cddb.so.5
 %attr(755,root,root) %{_libdir}/libKF5Cddb.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5CddbWidgets.so.5
-%attr(755,root,root) %{_libdir}/libKF5CddbWidgets.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_cddb.so
 %{_datadir}/config.kcfg/libkcddb5.kcfg
 %{_datadir}/kservices5/libkcddb.desktop
@@ -91,5 +89,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/kcddb_version.h
 %{_libdir}/cmake/KF5Cddb
 %attr(755,root,root) %{_libdir}/libKF5Cddb.so
-%attr(755,root,root) %{_libdir}/libKF5CddbWidgets.so
 %{_libdir}/qt5/mkspecs/modules/qt_KCddb.pri
