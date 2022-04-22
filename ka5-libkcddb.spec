@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkcddb
 Summary:	libkcddb
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b285bae6f5c39dccd5ea742464b39a62
+# Source0-md5:	2032620879146dfc039c364e38ddda11
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KCddb
+%{_includedir}/KCddb5
 %{_includedir}/KF5/kcddb_version.h
 %{_libdir}/cmake/KF5Cddb
 %{_libdir}/libKF5Cddb.so
