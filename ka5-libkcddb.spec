@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libkcddb
 Summary:	libkcddb
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	2
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6a83fa4c56efca75a6e8af818781b337
+# Source0-md5:	32ed7dbe820f5452bc56694bb3a96d1c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -91,16 +91,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %ghost %{_libdir}/libKF5Cddb.so.5
 %attr(755,root,root) %{_libdir}/libKF5Cddb.so.*.*.*
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_cddb.so
 %{_datadir}/config.kcfg/libkcddb5.kcfg
-%{_datadir}/kservices5/libkcddb.desktop
 %{_datadir}/qlogging-categories5/libkcddb.categories
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
+%{_desktopdir}/kcm_cddb.desktop
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KCddb
 %{_includedir}/KCddb5
-%{_includedir}/KF5/kcddb_version.h
 %{_libdir}/cmake/KF5Cddb
 %{_libdir}/libKF5Cddb.so
 %{_libdir}/qt5/mkspecs/modules/qt_KCddb.pri
